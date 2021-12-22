@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="_layout">
+<meta charset="UTF-8">
+
+<body>
+	<div layout:fragment="content">
+<div class="container">
+			<div class="row">
+				<div class="col-lg-3">
+				</div>
+			</div>
+            <div class="row">
+              <div class="col-lg-12">
+                <section class="panel">
+                  <header class="panel-heading">
+                    支店を修正
+                  </header>
+                  <div class="panel-body">
+                    <form class="form-horizontal" th:action="@{'/branch/Update/'+${branch.id}}" method="put">
+                      <!--date picker start-->
+
+                      <div class="form-group">
+                        <label class="control-label col-sm-4">支店名</label>
+                        <div class="col-sm-6">
+                            <input name="branchName" th:value="${branch.branchName}" type="text" size="16" class="form-control">               
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-sm-4">支店住所</label>
+                        <div class="col-sm-6">
+                            <input name="branchAddress" th:value="${branch.branchAddress}" type="text" size="16" class="form-control">               
+                        </div>
+                      </div>
+                      <div class="form-group">
+                      	<div class="col-sm-6">
+							<button type="submit" class="btn btn-success">保存</button>
+							<a href="/branches" class="btn btn-warning">キャンセル</a>
+						</div>
+					</div>
+                    </form>
+                  </div>
+                </section>
+              </div>
+            </div>
+            <div class="row">
+				<div class="col-lg-3">
+				</div>
+			</div>
+          </div>
+ </div>      
+
+
+</body>
+</html>
